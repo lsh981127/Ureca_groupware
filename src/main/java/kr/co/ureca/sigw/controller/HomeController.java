@@ -62,5 +62,11 @@ public class HomeController {
 		model.addAttribute("allVacList", allVacList);
 		return "test_vac_list";
 	}
+
+	@RequestMapping(value="/create_doc", method=RequestMethod.GET)
+	public String create_doc_page()
+	{
+		return "create_doc";
+	}
 	
 } // class

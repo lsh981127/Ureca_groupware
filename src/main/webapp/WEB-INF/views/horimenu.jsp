@@ -8,7 +8,7 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="create-doc" href="#">휴가원 제출</a>
+      <a class="create-doc" href="create_doc">휴가원 제출</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">휴가원 승인</a>
