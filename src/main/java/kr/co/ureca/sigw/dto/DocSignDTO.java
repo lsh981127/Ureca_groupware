@@ -6,24 +6,32 @@ public class DocSignDTO {
 
 	private int sign_no; // 결재문서 번호
 	private int emp_no; // 상신자 사번
+
 	private int sign_path_emp_no1; // 결재자 사번 1
 	private int sign_path_emp_no2; // 결재자 사번 2 (0이면 지정되지 않은 것)
 	private int sign_path_emp_no3; // 결재자 사번 3 (0이면 지정되지 않은 것)
 	private LocalDateTime sign_reg_date; // 등록날짜
 	private String sign_type; // 결재문서 타입 (휴가)
-	//private String sign_step; // (enum 필요) 결재문서 단계 (0:진행중 / 1: 1번 결재자 승인 or 반려 완료 / 2: 2번 결재자 승인 or 반려 완료 / 3: 3번 결재자 승인 or 반려 완료)
-	private SignStep sign_step; // (enum 필요) 결재문서 단계 (0:진행중 / 1: 1번 결재자 승인 or 반려 완료 / 2: 2번 결재자 승인 or 반려 완료 / 3: 3번 결재자 승인 or 반려 완료)
-
-	//private	int sign_status; // (enum 필요) 결재문서 상태 (0:진행중, 1:승인, 2:반려)
-	private SignStatus sign_status; // (enum 필요) 결재문서 상태 (0:진행중, 1:승인, 2:반려)
-
+	private String sign_step; // (enum 필요) 결재문서 단계 (0:진행중 / 1: 1번 결재자 승인 or 반려 완료 / 2: 2번 결재자 승인 or 반려 완료 / 3: 3번 결재자 승인 or 반려 완료)
+	private	int sign_status; // (enum 필요) 결재문서 상태 (0:진행중, 1:승인, 2:반려)
 	private LocalDateTime sign_date; // 결재날짜 (완료 기준 - 승인 or 반려된 날짜)
 
 
+	public String getSign_step() {
+		return sign_step;
+	}
 
+	public void setSign_step(String sign_step) {
+		this.sign_step = sign_step;
+	}
 
+	public int getSign_status() {
+		return sign_status;
+	}
 
-
+	public void setSign_status(int sign_status) {
+		this.sign_status = sign_status;
+	}
 
 	public int getSign_no() {
 		return sign_no;
@@ -68,89 +76,6 @@ public class DocSignDTO {
 		this.sign_type = sign_type;
 	}
 
-	/*public String getSign_step() {
-		return sign_step;
-	}
-	public void setSign_step(String sign_step) {
-		this.sign_step = sign_step;
-	}*/
-
-	/*public SignStatus getSign_status() {
-
-		SignStatus conv_sign_status = SignStatus.PRGS;
-		switch (sign_status) {
-			case 0: {
-				conv_sign_status = SignStatus.PRGS;
-			}
-			break;
-			case 1: {
-				conv_sign_status = SignStatus.APRO;
-			}
-			break;
-			case 2: {
-				conv_sign_status = SignStatus.RJCT;
-			}
-			break;
-		}
-
-		return conv_sign_status;
-	}
-	public void setSign_status(int sign_status)
-	{
-		this.sign_status = sign_status;
-	}*/
-
-
-
-
-
-	public SignStep getSign_step() {
-		return sign_step;
-	}
-
-	public void setSign_step(String data) {
-		//this.sign_step = sign_step;
-		switch (data) {
-			case "0": {
-				this.sign_step = SignStep.STEP_0;
-			}
-			break;
-			case "1": {
-				this.sign_step = SignStep.STEP_1;
-			}
-			break;
-			case "2": {
-				this.sign_step = SignStep.STEP_2;
-			}
-			break;
-			case "3": {
-				this.sign_step = SignStep.STEP_3;
-			}
-			break;
-		}
-	}
-
-	public SignStatus getSign_status() {
-		return sign_status;
-	}
-
-	public void setSign_status(int data) {
-
-		switch (data) {
-			case 0: {
-				this.sign_status = SignStatus.PRGS;
-			}
-			break;
-			case 1: {
-				this.sign_status = SignStatus.APRO;
-			}
-			break;
-			case 2: {
-				this.sign_status = SignStatus.RJCT;
-			}
-			break;
-		}
-	}
 
 	public void setSign_date(LocalDateTime sign_date) {
 		this.sign_date = sign_date;

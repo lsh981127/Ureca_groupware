@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-<form action="/submit" method="POST">
+<form action="/ureca/doc/create_doc" method="POST">
     <h1>휴가 신청서</h1>
     <fieldset>
         <legend>휴가 신청서</legend>
@@ -68,14 +68,14 @@
         </p>
 
         <p>승인자</p>
-        <label for="first_approval">
-            1차: <input type="text" id="first_approval" name="first_approval" />
+        <label class="form">
+            1차: <input type="number" name="sign_path_emp_no1" />
         </label>
-        <label for="second_approval">
-            2차: <input type="text" id="second_approval" name="second_approval" />
+        <label class="form">
+            2차: <input type="number"  name="sign_path_emp_no2" />
         </label>
-        <label for="third_approval">
-            3차: <input type="text" id="third_approval" name="third_approval" />
+        <label class="form">
+            3차: <input type="number" name="sign_path_emp_no3" />
         </label>
         <p>
             <button type="submit">제출</button>

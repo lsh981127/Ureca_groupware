@@ -9,6 +9,11 @@
 		insert into emp (emp_no, dept_no, emp_vac_cnt, emp_position, emp_name, emp_id, emp_password, emp_auth)
 		values(#{emp_no}, #{dept_no}, #{emp_vac_cnt}, #{emp_position}, #{emp_name}, #{emp_id}, #{emp_password}, #{emp_auth})
 	</insert>
+
+	<insert id="DocInsert" parameterType="kr.co.ureca.sigw.dto.DocSignDTO">
+		insert into Doc_Sign (sign_no, emp_no, sign_path_emp_no1, sign_path_emp_no2, sign_path_emp_no3, sign_reg_date, sign_type, sign_step, sign_status, sign_date)
+		values(#{sign_no}, #{emp_no}, #{sign_path_emp_no1}, #{sign_path_emp_no2}, #{sign_path_emp_no3}, #{sign_reg_date}, #{sign_type},#{sign_step},#{sign_status},#{sign_date})
+	</insert>
 	
 	<select id="allEmpList" parameterType="java.util.List" resultType="kr.co.ureca.sigw.dto.EmpDTO">
 		select emp_no, dept_no, emp_vac_cnt, emp_position, emp_name, emp_id, emp_password, emp_auth from emp
@@ -21,10 +26,10 @@
 	<select id="allDocSignList" parameterType="java.util.List" resultType="kr.co.ureca.sigw.dto.DocSignDTO">
 		select sign_no, emp_no, sign_path_emp_no1, sign_path_emp_no2, sign_path_emp_no3, sign_reg_date, sign_type, sign_step, sign_status, sign_date from doc_sign
 	</select>
-	
 	<select id="allVacList" parameterType="java.util.List" resultType="kr.co.ureca.sigw.dto.VacDTO">
 		select sign_no, vac_type, vac_start_date, vac_end_date, vac_duration, vac_reason from vac
 	</select>
 
 </mapper>
+
 
