@@ -12,16 +12,16 @@ public class DocSignDTO {
 	private int sign_path_emp_no3; // 결재자 사번 3 (0이면 지정되지 않은 것)
 	private LocalDateTime sign_reg_date; // 등록날짜
 	private String sign_type; // 결재문서 타입 (휴가)
-	private String sign_step; // (enum 필요) 결재문서 단계 (0:진행중 / 1: 1번 결재자 승인 or 반려 완료 / 2: 2번 결재자 승인 or 반려 완료 / 3: 3번 결재자 승인 or 반려 완료)
+	private int sign_step; // (enum 필요) 결재문서 단계 (0:진행중 / 1: 1번 결재자 승인 or 반려 완료 / 2: 2번 결재자 승인 or 반려 완료 / 3: 3번 결재자 승인 or 반려 완료)
 	private	int sign_status; // (enum 필요) 결재문서 상태 (0:진행중, 1:승인, 2:반려)
 	private LocalDateTime sign_date; // 결재날짜 (완료 기준 - 승인 or 반려된 날짜)
 
 
-	public String getSign_step() {
+	public int getSign_step() {
 		return sign_step;
 	}
 
-	public void setSign_step(String sign_step) {
+	public void setSign_step(int sign_step) {
 		this.sign_step = sign_step;
 	}
 

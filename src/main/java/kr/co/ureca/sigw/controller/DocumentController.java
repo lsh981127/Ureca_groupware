@@ -28,14 +28,13 @@ public class DocumentController {
         // 여기에서 form으로 받은 형태
         // 여기에서 임시값을 다 설정
         DocSignDTO temp = new DocSignDTO();
-        temp.setSign_no(2);
         temp.setEmp_no(1);
         temp.setSign_path_emp_no1(form.getSign_path_emp_no1());
         temp.setSign_path_emp_no2(form.getSign_path_emp_no2());
         temp.setSign_path_emp_no3(form.getSign_path_emp_no3());
         temp.setSign_reg_date(LocalDateTime.now());
         temp.setSign_type("휴가");
-        temp.setSign_step("0");
+        temp.setSign_step(0);
         temp.setSign_status(0);
         temp.setSign_date(form.getSign_date());
         sqlSession.insert("EmpMapper.DocInsert", temp);

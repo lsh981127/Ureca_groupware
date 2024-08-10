@@ -11,8 +11,8 @@
 	</insert>
 
 	<insert id="DocInsert" parameterType="kr.co.ureca.sigw.dto.DocSignDTO">
-		insert into Doc_Sign (sign_no, emp_no, sign_path_emp_no1, sign_path_emp_no2, sign_path_emp_no3, sign_reg_date, sign_type, sign_step, sign_status, sign_date)
-		values(#{sign_no}, #{emp_no}, #{sign_path_emp_no1}, #{sign_path_emp_no2}, #{sign_path_emp_no3}, #{sign_reg_date}, #{sign_type},#{sign_step},#{sign_status},#{sign_date})
+		insert into Doc_Sign (emp_no, sign_path_emp_no1, sign_path_emp_no2, sign_path_emp_no3, sign_reg_date, sign_type, sign_step, sign_status, sign_date)
+		values(#{emp_no}, #{sign_path_emp_no1}, #{sign_path_emp_no2}, #{sign_path_emp_no3}, #{sign_reg_date}, #{sign_type},#{sign_step},#{sign_status},#{sign_date})
 	</insert>
 	
 	<select id="allEmpList" parameterType="java.util.List" resultType="kr.co.ureca.sigw.dto.EmpDTO">
