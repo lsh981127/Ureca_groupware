@@ -23,7 +23,7 @@ public class DocumentController {
     }
 
     @PostMapping("/doc/create_doc")
-    public String create_doc(DocSignDTO form)
+    public void create_doc(DocSignDTO form)
     {
         // 여기에서 form으로 받은 형태
         // 여기에서 임시값을 다 설정
@@ -38,7 +38,7 @@ public class DocumentController {
         temp.setSign_status(0);
         temp.setSign_date(form.getSign_date());
         sqlSession.insert("EmpMapper.DocInsert", temp);
-        return "";
+        return ;
     }
 //
 //
